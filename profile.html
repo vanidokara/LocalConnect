@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - LocalConnect</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: #f7f9f8;
+        }
+
+        .profile-wrapper {
+            max-width: 950px;
+            margin: 45px auto;
+        }
+
+        .profile-card,
+        .info-card,
+        .stats-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+        }
+
+        .profile-card {
+            padding: 35px;
+        }
+
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            color: #198754;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+
+        .profile-name {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .info-card {
+            padding: 25px;
+            height: 100%;
+        }
+
+        .info-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: #e8f5e9;
+            color: #198754;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .stats-card {
+            padding: 22px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #198754;
+        }
+
+        .edit-form {
+            display: block;
+        }
+
+        .edit-form.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <span class="logo-dot">●</span>
+            LocalConnect
+        </a>
+
+        <div class="navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="browse.html">Browse</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="sell.html">Sell</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="d-flex gap-2">
+                <a href="dashboard.html" class="btn btn-login">Dashboard</a>
+                <a href="login.html" class="btn btn-login">Login</a>
+                <a href="signup.html" class="btn btn-signup">Sign Up</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= PROFILE ================= -->
+<div class="container profile-wrapper">
+
+    <div class="mb-4">
+        <h2 class="fw-bold mb-1">My Profile</h2>
+        <p class="text-muted mb-0">
+            Manage your LocalConnect profile information.
+        </p>
+    </div>
+
+
+    <!-- Profile Header -->
+    <div class="profile-card text-center mb-4">
+
+        <div class="profile-avatar" id="profileAvatar">
+            U
+        </div>
+
+        <div class="profile-name" id="profileName">
+            LocalConnect User
+        </div>
+
+        <p class="text-muted mb-3">
+            LocalConnect Member
+        </p>
+
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+            <button class="btn btn-outline-success" id="editProfileButton">
+                <i class="bi bi-pencil me-2"></i>
+                Edit Profile
+            </button>
+
+            <a href="login.html" class="btn btn-outline-danger">
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Edit Form -->
+    <div class="profile-card edit-form mb-4" id="editForm">
+
+        <h5 class="fw-bold mb-4">Edit Profile</h5>
+
+        <form id="profileForm">
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label">Full Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="nameInput"
+                           value="LocalConnect User"
+                           required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email"
+                           class="form-control"
+                           id="emailInput"
+                           value="user@example.com"
+                           required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel"
+                           class="form-control"
+                           id="phoneInput"
+                           value="+91 98765 43210"
+                           required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Location</label>
+                    <input type="text"
+                           class="form-control"
+                           id="locationInput"
+                           value="Vijayawada"
+                           required>
+                </div>
+
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-check-circle me-2"></i>
+                    Save Changes
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        id="cancelEditButton">
+                    Cancel
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- Information + Stats -->
+    <div class="row g-4">
+
+        <div class="col-md-7">
+
+            <div class="info-card">
+
+                <h5 class="fw-bold mb-3">Profile Information</h5>
+
+                <div class="info-item d-flex align-items-center gap-3">
+                    <div class="info-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    <div>
+                        <small class="text-muted d-block">Full Name</small>
+                        <span id="displayName">LocalConnect User</span>
+                    </div>
+                </div>
+
+
+                <div class="info-item d-flex align-items-center gap-3">
+                    <div class="info-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+
+                    <div>
+                        <small class="text-muted d-block">Email</small>
+                        <span id="displayEmail">user@example.com</span>
+                    </div>
+                </div>
+
+
+                <div class="info-item d-flex align-items-center gap-3">
+                    <div class="info-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+
+                    <div>
+                        <small class="text-muted d-block">Phone</small>
+                        <span id="displayPhone">+91 98765 43210</span>
+                    </div>
+                </div>
+
+
+                <div class="info-item d-flex align-items-center gap-3">
+                    <div class="info-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+
+                    <div>
+                        <small class="text-muted d-block">Location</small>
+                        <span id="displayLocation">Vijayawada</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+            <div class="row g-3">
+
+                <div class="col-6">
+                    <div class="stats-card">
+                        <div class="stat-value" id="listingCount">0</div>
+                        <small class="text-muted">My Listings</small>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="stats-card">
+                        <div class="stat-value" id="favoriteCount">0</div>
+                        <small class="text-muted">Favorites</small>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="stats-card">
+                        <div class="stat-value" id="messageCount">0</div>
+                        <small class="text-muted">Messages</small>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="stats-card">
+                        <div class="stat-value">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <small class="text-muted">Account</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer mt-5">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <h5>LocalConnect</h5>
+                <p>Connect. Discover. Trade locally.</p>
+            </div>
+
+            <div class="col-md-6 text-md-end">
+                <a href="about.html">About</a>
+                <a href="browse.html">Browse</a>
+                <a href="categories.html">Categories</a>
+                <a href="sell.html">Sell</a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="text-center mb-0">
+            © 2026 LocalConnect. All rights reserved.
+        </p>
+
+    </div>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

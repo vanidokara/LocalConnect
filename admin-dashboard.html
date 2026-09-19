@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - LocalConnect</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+body{background:#f7f9fb}.admin-header{background:linear-gradient(135deg,#173b32,#245b4d);color:#fff;border-radius:18px;padding:28px;margin-bottom:24px}.admin-header h1{font-weight:700}.admin-nav,.stat-card,.table-card{background:#fff;border:1px solid #e7ecea;border-radius:16px;box-shadow:0 5px 18px rgba(0,0,0,.05)}.admin-nav{padding:10px;margin-bottom:24px}.admin-nav a{text-decoration:none;color:#34413d;font-weight:600;padding:10px 14px;border-radius:10px;display:inline-block}.admin-nav a:hover,.admin-nav a.active{background:#e9f5f0;color:#176b53}.stat-card{padding:22px;height:100%}.stat-icon{width:48px;height:48px;border-radius:12px;background:#eaf6f1;color:#176b53;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:15px}.stat-card h3{font-size:28px;margin:0 0 4px;font-weight:700}.stat-card p{color:#687570;margin:0}.table-card{overflow:hidden}.card-heading{padding:18px 20px;border-bottom:1px solid #edf0ef}.card-heading h5{margin:0;font-weight:700}.table{margin:0}.table th{font-size:13px;color:#66716d;white-space:nowrap}.table td{vertical-align:middle;font-size:14px}.status{display:inline-block;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:600}.active-status{background:#e8f7ef;color:#18734d}.pending-status{background:#fff4dc;color:#966100}.reported-status{background:#fdebec;color:#b4232f}@media(max-width:767px){.admin-header{padding:22px 18px}.admin-nav a{display:block}}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand fw-bold" href="index.html"><span class="logo-dot">●</span> LocalConnect</a>
+<div class="navbar-collapse">
+<ul class="navbar-nav mx-auto flex-row flex-wrap justify-content-center gap-1">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+<li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+<li class="nav-item"><a class="nav-link" href="sell.html">Sell</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="d-flex gap-2"><a href="dashboard.html" class="btn btn-login">User Dashboard</a><a href="login.html" class="btn btn-login">Login</a></div>
+</div></div></nav>
+
+<main class="container py-5">
+<section class="admin-header">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+<div><h1>Admin Dashboard</h1><p class="mb-0 opacity-75">Manage LocalConnect users, listings and reports.</p></div>
+<span class="badge rounded-pill bg-light text-dark px-3 py-2"><i class="bi bi-shield-check me-1"></i> Administrator</span>
+</div></section>
+
+<div class="admin-nav">
+<a href="admin-dashboard.html" class="active"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+<a href="browse.html"><i class="bi bi-grid me-1"></i> Listings</a>
+<a href="reports.html"><i class="bi bi-flag me-1"></i> Reports</a>
+<a href="dashboard.html"><i class="bi bi-person me-1"></i> User Dashboard</a>
+</div>
+
+<div class="row g-4 mb-4">
+<div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon"><i class="bi bi-people"></i></div><h3>248</h3><p>Total Users</p></div></div>
+<div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon"><i class="bi bi-box-seam"></i></div><h3>524</h3><p>Total Listings</p></div></div>
+<div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon"><i class="bi bi-check-circle"></i></div><h3>486</h3><p>Active Listings</p></div></div>
+<div class="col-6 col-lg-3"><div class="stat-card"><div class="stat-icon"><i class="bi bi-flag"></i></div><h3>12</h3><p>Reported Listings</p></div></div>
+</div>
+
+<section class="table-card mb-4">
+<div class="card-heading d-flex justify-content-between align-items-center"><h5><i class="bi bi-box-seam me-2"></i>Recent Listings</h5><a href="browse.html" class="btn btn-sm btn-outline-primary">View All</a></div>
+<div class="table-responsive"><table class="table align-middle">
+<thead><tr><th>Listing</th><th>Seller</th><th>Category</th><th>Price</th><th>Status</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Study Table &amp; Chair</td><td>Rahul Kumar</td><td>Furniture</td><td>₹4,500</td><td><span class="status active-status">Active</span></td><td><a href="listing-details.html?item=study-table" class="btn btn-sm btn-outline-primary">View</a></td></tr>
+<tr><td>iPhone 12 – 128GB</td><td>Priya Reddy</td><td>Electronics</td><td>₹18,000</td><td><span class="status active-status">Active</span></td><td><a href="listing-details.html?item=iphone" class="btn btn-sm btn-outline-primary">View</a></td></tr>
+<tr><td>Designer Dress Material</td><td>Anjali</td><td>Fashion</td><td>₹1,299</td><td><span class="status reported-status">Reported</span></td><td><a href="listing-details.html?item=dress-material" class="btn btn-sm btn-outline-primary">View</a></td></tr>
+<tr><td>Mountain Bicycle</td><td>Vijay</td><td>Vehicles</td><td>₹2,200</td><td><span class="status pending-status">Pending</span></td><td><a href="listing-details.html?item=bicycle" class="btn btn-sm btn-outline-primary">View</a></td></tr>
+</tbody></table></div></section>
+
+<section class="table-card mb-4">
+<div class="card-heading"><h5><i class="bi bi-people me-2"></i>Recent Users</h5></div>
+<div class="table-responsive"><table class="table align-middle">
+<thead><tr><th>Name</th><th>Email</th><th>Location</th><th>Joined</th><th>Status</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Rahul Kumar</td><td>rahul@example.com</td><td>Vijayawada</td><td>18 Sep 2026</td><td><span class="status active-status">Active</span></td><td><button type="button" class="btn btn-sm btn-outline-secondary">View</button></td></tr>
+<tr><td>Priya Reddy</td><td>priya@example.com</td><td>Hyderabad</td><td>17 Sep 2026</td><td><span class="status active-status">Active</span></td><td><button type="button" class="btn btn-sm btn-outline-secondary">View</button></td></tr>
+<tr><td>Anjali</td><td>anjali@example.com</td><td>Guntur</td><td>16 Sep 2026</td><td><span class="status pending-status">Pending</span></td><td><button type="button" class="btn btn-sm btn-outline-secondary">View</button></td></tr>
+</tbody></table></div></section>
+
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+<a href="reports.html" class="btn btn-outline-danger"><i class="bi bi-flag me-1"></i> Review Reports</a>
+<small class="text-secondary">Frontend demo data only. Admin actions will be connected to the backend later.</small>
+</div>
+</main>
+
+<footer class="footer mt-5"><div class="container"><div class="row"><div class="col-md-6"><h5>LocalConnect</h5><p>Connect. Discover. Trade locally.</p></div><div class="col-md-6 text-md-end"><a href="index.html">Home</a><a href="about.html">About</a><a href="browse.html">Browse</a><a href="categories.html">Categories</a><a href="sell.html">Sell</a></div></div><hr><p class="text-center mb-0">© 2026 LocalConnect. All rights reserved.</p></div></footer>
+</body></html>
